@@ -1,3 +1,1 @@
 guildwars2-api-client
-google-cloud-bigquery==2.26.*
-google-cloud-logging==2.6.*

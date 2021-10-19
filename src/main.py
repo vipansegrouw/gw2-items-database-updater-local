@@ -1,14 +1,14 @@
-from src.clients.bigquery import BigQuery
 from src.clients.gw2client import GW2Client
+from src.utils import write_items, get_current_item_ids, get_new_item_ids
 
 
 def main():
     gw2_client = GW2Client()
-    big_query_client = BigQuery()
-    item_ids = [6, 15]
+    item_ids = gw2_client.get_items()
+    #  todo these need to be ids not items
     items = gw2_client.get_items(item_ids)
-    current_items = big_query_client.get_current_ids()
-    print(current_items)
+    #  todo write all items to file - it's json so you can't just do the new ones
+    write_items(items_all)
 
 
 if __name__ == "__main__":

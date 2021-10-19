@@ -12,7 +12,9 @@ class GW2Client:
     def get_list_of_all_item_ids(self) -> List[int]:
         return self.gw2_client().items.get()
 
-    def get_items(self, ids: List[int]) -> List[Item]:
+    def get_items(self, ids: List[int] = None) -> List[Item]:
+
+        #  todo this should batch in groups of 200
 
         items_list = self.gw2_client().items.get(ids=ids)
         items = []
